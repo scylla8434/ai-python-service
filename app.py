@@ -21,5 +21,9 @@ def chat():
     )
     return jsonify({'answer': response.generations[0].text.strip()})
 
+@app.route('/')
+def home():
+    return 'AI Python Service is running!', 200
+
 if __name__ == '__main__':
     app.run(port=5001, debug=True)
